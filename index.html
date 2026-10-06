@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <title>Arcade Player Card</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .card {
+        background: #334155;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        width: 320px;
+        text-align: center;
+      }
+      .btn {
+        background: #22c55e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .btn:hover { background: #16a34a; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>PLAYER CARD</h2>
+      <P>Status: <span id="statusText" style="color: #fde047;">Siap Bermain</span></span></p>
+      <button class="btn" onclick="mainGame()">Mulai Game JS</button>
+      <footer>
+          <h5>&copy; 2026 Irah imut Anak RPL</h5>
+      </footer>
+    </div>
+    <script>
+      let angkaRahasia = Math.floor(Math.random() * 10) + 1;
+
+  function mainGame() {
+   let tebakan = prompt("Tebak angka rahasia (1 - 10):");
+   let statusText = document.getElementById("statusText");
+
+   if (parseInt(tebakan) === angkaRahasia) {
+       statusText.innerText = "WINNER! Angka: " + angkaRahasia;
+       statusText.style.color = "#22c55e";
+   } else {
+    statusText.innerText = "GAMEOVER! Angka: " + angkaRahasia;
+    statusText.style.color = "#ef4444";
+   }
+   angkaRahasia = Math.floor(Math.random() * 10) + 1;
+  } 
+</script>
+</body>
+</html>
